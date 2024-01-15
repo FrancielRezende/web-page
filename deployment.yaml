@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-page
+spec:
+  selector:
+    matchlabes:
+      app: meydeployment
+  template:
+    metadata:
+      lables:
+        app: meydeployment
+    spec:
+      containers:
+        - name: web
+          image: francielrezende/web-page:blue
+          ports:
+          - containerPort: 80
+          
