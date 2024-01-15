@@ -4,16 +4,15 @@ metadata:
   name: web-page
 spec:
   selector:
-    matchlabes:
-      app: meydeployment
+    matchLabes:
+      app: mydeployment
   template:
     metadata:
       lables:
-        app: meydeployment
+        app: mydeployment
     spec:
       containers:
         - name: web
           image: francielrezende/web-page:blue
           ports:
           - containerPort: 80
-          
