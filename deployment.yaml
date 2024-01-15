@@ -3,11 +3,10 @@ apiVersion: apps/v1
 metadata:
   name: web-page
 spec:
-  #replicas: 4
-  #AAAA
+  replicas: 3
   selector:
     #BBBBB
-    matchLabes:
+    matchLabels:
       app: mydeployment
       version: v01
   template:
@@ -18,6 +17,6 @@ spec:
     spec:
       containers:
         - name: web
-          image: francielrezende/web-page:blue
+          image: fabricioveronez/web-color:blue
           ports:
           - containerPort: 80
