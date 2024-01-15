@@ -6,10 +6,12 @@ spec:
   selector:
     matchLabes:
       app: mydeployment
+      version: v01
   template:
     metadata:
       lables:
         app: mydeployment
+        version: v01
     spec:
       containers:
         - name: web
