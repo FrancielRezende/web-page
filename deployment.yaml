@@ -1,20 +1,23 @@
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
-  name: web-page
+  name: testit-01-deployment
 spec:
+  replicas: 4
+  #number of replicas generated
   selector:
-    matchLabes:
-      app: mydeployment
+    #assigns labels to the pods for future selection
+    matchLabels:
+      app: testit
       version: v01
   template:
     metadata:
-      lables:
-        app: mydeployment
+      labels:
+        app: testit
         version: v01
     spec:
       containers:
-        - name: web
-          image: francielrezende/web-page:blue
-          ports:
-          - containerPort: 80
+      - name: testit-container
+        image: teejayfamo/testit
+        ports:
+        - containerPort: 80
