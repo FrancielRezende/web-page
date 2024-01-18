@@ -32,4 +32,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    name: HTTP
+    name: http
+    nodePort: 30000
+  type: NodePort
+
