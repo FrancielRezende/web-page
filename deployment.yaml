@@ -1,3 +1,4 @@
+# DEPLOYMENT OF WEB-PAGE
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -5,7 +6,6 @@ metadata:
 spec:
   replicas: 3
   selector:
-    #BBBBB
     matchLabels:
       app: mydeployment
       version: v01
@@ -20,3 +20,16 @@ spec:
           image: fabricioveronez/web-color:blue
           ports:
           - containerPort: 80
+---
+# SERVICE DO WEB-PAGE
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-page
+spec:
+  selector:
+    app: mydeployment
+  ports:
+  - protocol: TCP
+    port: 80
+    name: HTTP
